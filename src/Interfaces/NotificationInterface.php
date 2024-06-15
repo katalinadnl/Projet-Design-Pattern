@@ -1,8 +1,8 @@
 <?php
 
-namespace PaymentLibrary\Interfaces;
+namespace ProjetDesignPattern\Interfaces;
 
-interface NotificationInterface
-{
-    public function notify(string $message): void;
+interface NotificationInterface {
+    public function notify($message);
 }
+?>
