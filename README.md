@@ -34,6 +34,11 @@ This project is a PHP library designed to provide a unified interface for intera
    composer install
    ```
 
+2. **Test code**
+
+   ```bash
+   php src/Test.php
+   ```
 ## Usage
 
 
@@ -63,9 +68,9 @@ You can also configure additional settings such as redirect URLs for PayPal tran
 ```php
 namespace ProjetDesignPattern\PaymentGateways;
 
-use ProjetDesignPattern\Interfaces\PaymentInterface;
+use ProjetDesignPattern\core\Payment;
 
-class NewPaymentGateway implements PaymentInterface
+class NewPaymentGateway implements Payment
 {
     // Implement all required methods
 }
@@ -74,11 +79,11 @@ class NewPaymentGateway implements PaymentInterface
 ```php
 namespace ProjetDesignPattern\Factory;
 
-use ProjetDesignPattern\Interfaces\PaymentInterface;
-use ProjetDesignPattern\PaymentGateways\NewPaymentGateway;
+use ProjetDesignPattern\core\Payment;
+use ProjetDesignPattern\PaymentService\NewPaymentGateway;
 
 class PaymentFactory {
-    public static function createPaymentGateway(string $type): PaymentInterface {
+    public static function createPaymentGateway(string $type): Payment {
         switch ($type) {
             case 'newgateway':
                 return new NewPaymentGateway();
