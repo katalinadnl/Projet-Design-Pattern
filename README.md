@@ -1,113 +1,43 @@
+# Bibliothèque PHP pour les Interfaces de Paiement en Ligne
 
-# PHP Library for Online Payment Interfaces
+## Membres du groupe
+- GIRARD Camille
+- DANILA Catalina
 
-## Overview
+## Aperçu
 
-This project is a PHP library designed to provide a unified interface for interacting with various online payment gateways such as Stripe and PayPal. The library is built following SOLID principles and design patterns to ensure it is robust, extensible, and maintainable.
+Ce projet est une bibliothèque PHP conçue pour fournir une interface unifiée pour interagir avec divers passerelles de paiement en ligne comme Stripe et PayPal. La bibliothèque est construite selon les principes SOLID et DRY et les modèles de conception pour assurer sa robustesse, extensibilité et maintenabilité.
 
-## Features
+## Fonctionnalités
 
-- **Unified Interface**: Interact with different payment gateways through a common interface.
-- **Dynamic Payment Gateway Selection**: Easily switch between different payment gateways.
-- **Transaction Management**: Create, execute, and cancel payment transactions.
-- **Observer Pattern**: Notify third-party services about the status of payment transactions.
+- **Interface Unifiée** : Interagissez avec différentes passerelles de paiement via une interface commune.
+- **Sélection Dynamique de Passerelles** : Changez facilement de passerelle de paiement.
+- **Gestion des Transactions** : Créez, exécutez et annulez des transactions de paiement.
 
 ## Installation
 
-### Prerequisites
+### Prérequis
 
-- PHP 7.4 or higher
+- PHP 7.4 ou supérieur
 - Composer
 
-### Steps
+### Étapes
 
-1. **Clone the Repository**
+1. **Cloner le Référentiel**
 
    ```bash
    git clone https://github.com/katalinadnl/Projet-Design-Pattern.git
    cd Projet-Design-Pattern
-   ```
 
-2. **Install Dependencies**
+
+2. **Installer les Dépendances**
 
    ```bash
    composer install
    ```
 
-2. **Test code**
+3. **Tester le Code**
 
    ```bash
    php src/Test.php
    ```
-## Usage
-
-
-## Configuration
-
-### Stripe Configuration
-
-- `api_key`: Your Stripe API key.
-
-### PayPal Configuration
-
-- `client_id`: Your PayPal client ID.
-- `client_secret`: Your PayPal client secret.
-
-You can also configure additional settings such as redirect URLs for PayPal transactions by passing them to the `initialize` method or using setter methods.
-
-## Extending the Library
-
-### Adding a New Payment Gateway
-
-1. **Create a new class that implements `PaymentInterface`.**
-2. **Implement all required methods (`initialize`, `createTransaction`, `executeTransaction`, `cancelTransaction`, `getTransactionStatus`).**
-3. **Add the new class to `PaymentFactory`.**
-
-### Example: Adding a New Payment Gateway
-
-```php
-namespace ProjetDesignPattern\PaymentGateways;
-
-use ProjetDesignPattern\core\Payment;
-
-class NewPaymentGateway implements Payment
-{
-    // Implement all required methods
-}
-```
-
-```php
-namespace ProjetDesignPattern\Factory;
-
-use ProjetDesignPattern\core\Payment;
-use ProjetDesignPattern\PaymentService\NewPaymentGateway;
-
-class PaymentFactory {
-    public static function createPaymentGateway(string $type): Payment {
-        switch ($type) {
-            case 'newgateway':
-                return new NewPaymentGateway();
-            // other cases...
-            default:
-                throw new \Exception("Unsupported payment gateway");
-        }
-    }
-}
-```
-
-## Contributing
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any questions or suggestions, feel free to contact us at [contact@katy.com].
