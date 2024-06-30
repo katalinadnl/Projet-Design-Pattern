@@ -8,12 +8,6 @@
 
 Ce projet est une bibliothèque PHP conçue pour fournir une interface unifiée pour interagir avec divers passerelles de paiement en ligne comme Stripe et PayPal. La bibliothèque est construite selon les principes SOLID et DRY et les modèles de conception pour assurer sa robustesse, extensibilité et maintenabilité.
 
-## Fonctionnalités
-
-- **Interface Unifiée** : Interagissez avec différentes passerelles de paiement via une interface commune.
-- **Sélection Dynamique de Passerelles** : Changez facilement de passerelle de paiement.
-- **Gestion des Transactions** : Créez, exécutez et annulez des transactions de paiement.
-
 ## Installation
 
 ### Prérequis
